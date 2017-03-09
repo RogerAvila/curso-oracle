@@ -1,0 +1,1 @@
+CREATE TABLE usuario_xxx (id integer, nombre varchar2(40), edad integer,constraint pk_id primary key(id));create or replace trigger disp_usuario_xxx before insert on usuario_xxxfor each row begin--la logica va despues del beginif :new.edad < 18 then raise_application_error(-20001, 'Eres menor de edad'); --esta es la excepcion.end if;end;/
